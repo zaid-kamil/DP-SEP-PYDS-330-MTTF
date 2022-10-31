@@ -17,7 +17,6 @@ def update():
     if keyboard.left:
         p.x -= 5
         p.angle = 10
-        sounds.bomb.play()
     elif keyboard.right:
         p.x += 5
         p.angle = -10
