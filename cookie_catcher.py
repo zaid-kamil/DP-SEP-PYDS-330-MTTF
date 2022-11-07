@@ -24,7 +24,6 @@ def draw():
         screen.fill('green')
         screen.draw.text('You Win!', (WIDTH/2-100, HEIGHT/2-50), fontsize=50)
     
-
 def player_control():
     if keyboard.W:
         p.y -= p.speed
@@ -38,6 +37,11 @@ def player_control():
         p.angle = -10
     else:
         p.angle = 0
+    # boundary
+    if p.x < 0:
+        p.x = WIDTH
+    if p.x > WIDTH:
+        p.x = 0
 
 def handle_score():
     global score
