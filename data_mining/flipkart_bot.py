@@ -61,13 +61,12 @@ def main():
         url =f'https://www.flipkart.com/search?q={product}&page={pos}'
         print(url)
         soup = get(url)
-        if soup:
-            data = extract(soup)
-            if data:
-                datalist.extend(data)
-                pos += 1
-            else:
-                break
+        if soup is None:
+            break
+        data = extract(soup)
+        if data:
+            datalist.extend(data)
+            pos += 1
         else:
             break
     save(datalist)
